@@ -75,7 +75,7 @@ const QuizContent: React.FC = () => {
         case 7: return <Page07SocialProof audio={audio} />; // prova_social
         case 8: return <Page08NameInput audio={audio} />; // nome
         case 9: return <Page09BodyType audio={audio} />; // tipo_de_corpo
-        case 10: return <Page06WeightImpact audio={audio} />; // impacto_do_peso
+        case 10: return <Page10DailyRoutine audio={audio} />; // rotina_diaria
         case 11: return <Page15WeightTriggers audio={audio} />; // gatilhos
         case 12: return <Page12PhysicalDifficulties audio={audio} />; // dificuldades_fisicas
         case 13: return <Page13TestimonialNew audio={audio} />; // transformacoes
