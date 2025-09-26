@@ -76,11 +76,11 @@ const QuizContent: React.FC = () => {
         case 8: return <Page08NameInput audio={audio} />; // nome
         case 9: return <Page09BodyType audio={audio} />; // tipo_de_corpo
         case 10: return <Page10DailyRoutine audio={audio} />; // rotina_diaria
-        case 11: return <Page11WeightLossBarriers audio={audio} />; // barreiras
-        case 12: return <Page15WeightTriggers audio={audio} />; // gatilhos
-        case 13: return <Page12PhysicalDifficulties audio={audio} />; // dificuldades_fisicas
-        case 14: return <Page13TestimonialNew audio={audio} />; // transformacoes
-        case 15: return <Page14VSLNutritionistAuthority audio={audio} />; // vsl_autoridade
+        case 11: return <Page15WeightTriggers audio={audio} />; // gatilhos
+        case 12: return <Page12PhysicalDifficulties audio={audio} />; // dificuldades_fisicas
+        case 13: return <Page13TestimonialNew audio={audio} />; // transformacoes
+        case 14: return <Page14VSLNutritionistAuthority audio={audio} />; // vsl_autoridade
+        case 15: return <Page11WeightLossBarriers audio={audio} />; // barreiras
         case 16: return <Page19HeightWeight audio={audio} />; // altura_peso
         case 17: return <Page20DesiredWeight audio={audio} />; // peso_desejado
         case 18: return <Page18FaceTransformation audio={audio} />; // face_transformation
