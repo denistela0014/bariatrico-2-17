@@ -87,64 +87,59 @@ export const Page09BodyType: React.FC<QuizPageProps> = ({ audio = {} }) => {
 
   return (
     <ProfessionalQuizLayout headerTitle="Meu perfil">
-      <div className="animate-betterme-page-enter space-y-6">
-        {/* Title */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
-            Qual seu tipo de corpo?
+      <div className="animate-betterme-page-enter space-y-8 max-w-lg mx-auto">
+        {/* Title and Subtitle */}
+        <div className="text-center space-y-3">
+          <h2 className="text-xl md:text-2xl font-bold text-foreground">
+            Qual é o seu tipo de corpo atual?
           </h2>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Vamos personalizar os Chás que funcionem para seu tipo de corpo.
+          </p>
         </div>
 
-        {/* Options Grid - 2x2 layout similar to reference */}
-        <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+        {/* Options List - Vertical layout like reference */}
+        <div className="space-y-3">
           {options.map((option, index) => (
             <button
               key={option.id}
               onClick={() => handleOptionSelect(option.id)}
               className={`
-                relative bg-white border-2 rounded-2xl overflow-hidden 
-                transition-all duration-300 hover:scale-105
-                ${selectedOption === option.id ? 'border-primary ring-2 ring-primary/20' : 'border-gray-200'}
+                w-full flex items-center gap-4 p-4 rounded-2xl border-2 
+                transition-all duration-300 hover:scale-[1.02]
+                ${selectedOption === option.id 
+                  ? 'border-primary bg-primary/5 shadow-md' 
+                  : 'border-border bg-background hover:border-primary/50'
+                }
               `}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Body Image */}
-              <div className="aspect-[3/4] relative">
+              {/* Body Image - smaller on the left */}
+              <div className="w-16 h-20 flex-shrink-0">
                 <img 
                   src={option.image} 
                   alt={option.text}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                   loading="eager"
                 />
-                
-                {/* Selection indicator */}
-                {selectedOption === option.id && (
-                  <div className="absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-lg animate-betterme-confirm">
-                    <Check className="w-3 h-3 text-primary-foreground" />
-                  </div>
-                )}
               </div>
               
-              {/* Text Label with Radio Circle */}
-              <div className="p-2 bg-primary flex items-center gap-2">
-                <p className="font-semibold text-white text-xs sm:text-sm leading-tight flex-1">
+              {/* Text Label - centered */}
+              <div className="flex-1 text-center">
+                <p className="font-semibold text-foreground text-base md:text-lg">
                   {option.text}
                 </p>
-                
-                {/* Radio Circle - smaller for mobile */}
-                <div className={`
-                  w-4 h-4 rounded-full border-2 transition-colors flex-shrink-0
-                  ${selectedOption === option.id 
-                    ? 'bg-primary border-primary' 
-                    : 'border-gray-300 bg-white'
-                  }
-                `}>
-                  {selectedOption === option.id && (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                    </div>
-                  )}
-                </div>
+              </div>
+
+              {/* Selection indicator */}
+              <div className="flex-shrink-0">
+                {selectedOption === option.id ? (
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-lg animate-betterme-confirm">
+                    <Check className="w-3 h-3 text-primary-foreground" />
+                  </div>
+                ) : (
+                  <div className="w-6 h-6 rounded-full border-2 border-border bg-background" />
+                )}
               </div>
             </button>
           ))}
